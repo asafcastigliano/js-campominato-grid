@@ -1,19 +1,15 @@
-function createCell(num){
-    const element = document.createElement("div");
-    element.classList.add("square");
-    element.innerText = num;
-
-    return element;
-}
-
-const grid = document.getElementsById("grid");
-
-for(let i = 0; i < 100; i++){
-    let square = createCell(i+1);
+const game = document.querySelector(".gioca");
+game.addEventListener("click", function(){
     
-    square.addEventListener("click", function(){
-        this.classList.toggle("clicked");
-    })
+    let number = 1
 
-    grid.appendChild(square);
-}
+    for(let i = 0; i < 10; i++){
+        document.getElementById("game").innerHTML += "<div id=\"row-" + (i+1) + "\" class=\"d-flex w-1000\"></div>";
+        for(let j = 0; j < 10; j++){
+            document.getElementById(("row-"+(i+1))).innerHTML += "<div  class=\"square\">" + number + "</div>";
+            number++;
+        }
+    }
+    
+
+})
