@@ -10,6 +10,4 @@ game.addEventListener("click", function(){
             number++;
         }
     }
-    
-
 })
